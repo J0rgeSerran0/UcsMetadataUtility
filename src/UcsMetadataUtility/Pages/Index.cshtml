@@ -90,9 +90,16 @@
         //document.execCommand('copy');
         //window.getSelection().removeAllRanges();
 
+        var separatorbetweenfields = document.getElementById('separatorbetweenfields').value;
         var content = document.getElementById(id).value.trim();
 
+
         if (content != "") {
+            
+            if (separatorbetweenfields != "") {
+                content = content.replaceAll(" ", separatorbetweenfields);
+            }
+        
             if (withExtension) {
                 if (document.getElementById("optionwav").checked === true) {
                     content = content + '.WAV';
@@ -113,6 +120,7 @@
                     content = content + '.TIFF';
                 }
             }
+
             navigator.clipboard.writeText(content);
         }
     };
