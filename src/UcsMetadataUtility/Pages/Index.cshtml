@@ -102,6 +102,15 @@
                 else if (document.getElementById("optionaiff").checked === true) {
                     content = content + '.AIFF';
                 }
+                else if (document.getElementById("optionjpg").checked === true) {
+                    content = content + '.JPG';
+                }
+                else if (document.getElementById("optionpng").checked === true) {
+                    content = content + '.PNG';
+                }
+                else if (document.getElementById("optiontiff").checked === true) {
+                    content = content + '.TIFF';
+                }
             }
             navigator.clipboard.writeText(content);
         }
@@ -127,7 +136,7 @@
 
     <div class="form-group">
         <h3 style="font-size:60px;text-align:center;text-shadow:0 1px 0 rgb(200,200,200),0 2px 0 rgb(190,190,190),0 3px 0 rgb(180,180,180),0 4px 0 rgb(175,175,175),0 5px 0 rgb(180,180,180),0 6px 0 rgb(190,190,190),5px 7px 5px rgba(0, 0, 0, .40),5px 12px 10px rgba(0, 0, 0, .30),5px 17px 20px rgba(0, 0, 0, .20),5px 22px 30px rgba(0, 0, 0, .10);color: white;">
-            <strong>UCS Utility</strong>
+            <strong>UCS Metadata Utility</strong>
         </h3>
         <p style="font-size:14px;text-align:center;text-shadow:0 1px 0 rgb(200,200,200),0 2px 0 rgb(190,190,190),0 3px 0 rgb(180,180,180),0 4px 0 rgb(175,175,175),0 5px 0 rgb(180,180,180),0 6px 0 rgb(190,190,190),5px 7px 5px rgba(0, 0, 0, .40),5px 12px 10px rgba(0, 0, 0, .30),5px 17px 20px rgba(0, 0, 0, .20),5px 22px 30px rgba(0, 0, 0, .10);color: #5c2639;">Tool to prepare your metadata of your field recording and sound effects</p>
 
@@ -219,6 +228,14 @@
                                 <label class="btn btn-secondary" for="optionmp3" title="Add the .MP3 extension for the Filename">MP3</label>
                                 <input type="radio" class="btn-check" name="optionmedia" id="optionaiff" autocomplete="off" />
                                 <label class="btn btn-secondary" for="optionaiff" title="Add the .AIFF extension for the Filename">AIFF</label>
+                            </div>
+                            <div class="btn-group">
+                                <input type="radio" class="btn-check" name="optionmedia" id="optionjpg" autocomplete="off" />
+                                <label class="btn btn-secondary" for="optionjpg" title="Add the .JPG extension for the Filename">JPG</label>
+                                <input type="radio" class="btn-check" name="optionmedia" id="optionpng" autocomplete="off" />
+                                <label class="btn btn-secondary" for="optionpng" title="Add the .PNG extension for the Filename">PNG</label>
+                                <input type="radio" class="btn-check" name="optionmedia" id="optiontiff" autocomplete="off" />
+                                <label class="btn btn-secondary" for="optiontiff" title="Add the .TIFF extension for the Filename">TIFF</label>
                             </div>
                         </div>
                     </td>
