@@ -19,7 +19,7 @@ You can find more information about *UCS* clicking in the next image link
 
 # Software Requirements
 * This tool is developed using .NET Core 6, so you will have to install **ASP.NET Core Runtime 6.0.x** for your OS. You can find the package <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0">here</a>
-* After this, you can run this tool with the command **dotnet UcsMetadataUtility.dll**
+* After this, you can run this tool with the command **dotnet UcsMetadataUtility.dll**, but you can do it easily with the batch files that I am sharing in the **Executing the tool** section in this document
 
 # Fixing errors executing the tool
 * If executing the command you find the error `Unhandled exception. System.IO.IOException: Failed to bind to address http://127.0.0.1:5000: address already in use.`, use a different port executing the command *dotnet UcsMetadataUtility.dll --urls=http://localhost:port* where *port* is a different default port (5000), as for example **dotnet UcsMetadataUtility.dll --urls=http://localhost:5004** 
@@ -27,4 +27,8 @@ You can find more information about *UCS* clicking in the next image link
 > If you consider execute this tool in a https port, you can do it too
 
 # Download the Tool
-* To download the tool, you can 
+* You can download the tool from this <a href="https://github.com/J0rgeSerran0/UcsMetadataUtility/releases/tag/v1.0.0">link</a>
+* Note: If you not find confident with this link, you can download the source code and compile it on your machine. Feel free to do it as you want
+
+# Executing the tool
+* To help you, I have prepared some scripts to execute the tool easily on your System. These scripts are for *Windows* and *macOS* only. I have not prepared the *Linux* batch file, but is very similar
