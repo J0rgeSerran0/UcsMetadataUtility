@@ -7,6 +7,7 @@
 
 <script type="text/javascript">
     function loadData() {
+        clearMetadata();
 
         $.ajax({
             type: "GET",
@@ -120,6 +121,16 @@
     function clearMetadata() {
         document.getElementById("filename").value = "";
         document.getElementById("description").value = "";
+
+        var filenametext = document.getElementById('filenametext').value.trim();
+        if (filenametext != "") {
+            document.getElementById("filename").value = filenametext;
+        }
+
+        var descriptiontext = document.getElementById('descriptiontext').value.trim();
+        if (descriptiontext != "") {
+            document.getElementById("description").value = descriptiontext;
+        }
     }
 
 
@@ -139,6 +150,10 @@
             <strong>UCS Metadata Utility</strong>
         </h3>
         <p style="font-size:14px;text-align:center;text-shadow:0 1px 0 rgb(200,200,200),0 2px 0 rgb(190,190,190),0 3px 0 rgb(180,180,180),0 4px 0 rgb(175,175,175),0 5px 0 rgb(180,180,180),0 6px 0 rgb(190,190,190),5px 7px 5px rgba(0, 0, 0, .40),5px 12px 10px rgba(0, 0, 0, .30),5px 17px 20px rgba(0, 0, 0, .20),5px 22px 30px rgba(0, 0, 0, .10);color: #5c2639;">Tool to prepare your metadata of your field recording and sound effects</p>
+
+        <input type="hidden" id="filenametext" name="filenametext" value="@Model.FileNameText" />
+        <input type="hidden" id="descriptiontext" name="descriptiontext" value="@Model.DescriptionText" />
+        <input type="hidden" id="separatorbetweenfields" name="separatorbetweenfields" value="@Model.SeparatorBetweenFields" />
 
         <div id="divLoading">
             <img src="~/images/loading.gif" alt="Loading...." />
