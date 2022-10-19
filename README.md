@@ -32,3 +32,26 @@ You can find more information about *UCS* clicking in the next image link
 
 # Executing the tool
 * To help you, I have prepared some scripts to execute the tool easily on your System. These scripts are for *Windows* and *macOS* only. I have not prepared the *Linux* batch file, but is very similar
+
+## Windows
+* Create a **.bat** file and add the next content
+
+```yaml
+cd C:\UcsMetadataUtility\
+start http://localhost:5000/
+dotnet UcsMetadataUtility.dll 
+```
+
+> Note: change the path, or the port, as is explained in this document
+
+## macOS
+* Create a **.sh** file and add the next content
+
+```yaml
+#!/bin/bash
+cd /UcsMetadataUtility/
+open "http://localhost:5000/" 
+dotnet UcsMetadataUtility.dll 
+```
+
+> Note: change the path, or the port, as is explained in this document
