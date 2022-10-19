@@ -60,7 +60,7 @@ dotnet UcsMetadataUtility.dll --urls=http://localhost:5004
 
 > Note: change the path, or the port, as is explained in this document
 
-# Screens
+# Screens (v1.0)
 
 ## Home Screen
 ![Home Screen](images/Screen_01.png)
