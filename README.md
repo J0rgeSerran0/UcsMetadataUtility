@@ -17,10 +17,7 @@ You can find more information about *UCS* clicking in the next image link
 # Versions
 
 ### Stable Version
-* [`v1.0`](https://github.com/J0rgeSerran0/UcsMetadataUtility/releases/tag/v1.0.0) is the first version
-
-### Future Version
-* [`v1.1`](https://github.com/J0rgeSerran0/UcsMetadataUtility/milestone/1) is under development
+* [`v1.1.0`](https://github.com/J0rgeSerran0/UcsMetadataUtility/releases/tag/v1.1.0) is the last stable version
 
 # How it works
 * Load dinamically a CSV file named <em>UCSCategoryList.csv</em> with the UCS official content. You can edit the file deleting or adding content there if is fine for you
