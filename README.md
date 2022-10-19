@@ -38,11 +38,11 @@ You can find more information about *UCS* clicking in the next image link
 
 > If you consider execute this tool in a https port, you can do it too
 
-# Download the Tool
+# Download it
 * You can download the tool from this <a href="https://github.com/J0rgeSerran0/UcsMetadataUtility/releases/tag/v1.0.0">link</a>
 * Note: If you not find confident with this link, you can download the source code and compile it on your machine. Feel free to do it as you want
 
-# Executing the tool
+# Executing it
 * To help you, I have prepared some scripts to execute the tool easily on your System. These scripts are for *Windows* and *macOS* only. I have not prepared the *Linux* batch file, but is very similar
 
 ## Windows
