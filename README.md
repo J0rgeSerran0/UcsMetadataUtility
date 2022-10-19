@@ -2,7 +2,7 @@
 
 <a target="_blank" href="https://www.paypal.com/paypalme/jorserp"><img src="images/PayPal.png" />&nbsp;Pay me a coffee if find this tool useful</a>
 
-> This is a multiplatform Web Tool to create medatada following the UCS - Universal Category System proposals
+> Is a multiplatform Web Tool to create medatada following the UCS - Universal Category System proposals
 
 **UCS** is a public domain initiative to provide the use of a set category list for the classification of sound effects
 
@@ -62,8 +62,8 @@ dotnet UcsMetadataUtility.dll --urls=http://localhost:5004
 
 # Screens (v1.0)
 
-## Home Screen
+### Home Screen
 ![Home Screen](images/Screen_01.png)
 
-## Search Screen
+### Search Screen
 ![Search Screen](images/Screen_02.png)
