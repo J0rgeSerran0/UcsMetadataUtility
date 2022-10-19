@@ -10,7 +10,9 @@ You can find more information about *UCS* clicking in the next image link
 
 <a target="_blank" href="https://universalcategorysystem.com/"><img src="images/ucs_black_small.png" width="120" /></a>
 
-<a href="https://www.youtube.com/watch?v=0s3ioIbNXSM">UCS Filename Structure (YouTube)</a>
+### Videos
+* <a href="https://www.youtube.com/watch?v=0s3ioIbNXSM">YouTube - UCS Filename Structure</a>
+* <a href="https://www.youtube.com/watch?v=5WRlLx-yDOI">YouTube - How to write metadata for field recording & sound effects - Universal Category System (UCS)</a>
 
 # How it works
 * Load dinamically a CSV file named <em>UCSCategoryList.csv</em> with the UCS official content. You can edit the file deleting or adding content there if is fine for you
