@@ -26,6 +26,35 @@ You can find more information about *UCS* clicking in the next image link
 * <strong>Search</strong>, lets you localize a term, its categorization and the details that contains
 * <strong>About</strong>, is a little help information that contains something very similar to this README file
 
+### Settings
+_UCS Metadata Utility_ has some settings that can be found in the file **appsettings.json**
+
+Inside of the `UCSMetadata` section, you can find something like:
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "UCSMetadata": {
+    "FileNameText": "",
+    "DescriptionText": "",
+    "SeparatorBetweenFields": "_"
+  }
+}
+```
+
+* The **FileNameText** option is a text that will appear in the _File Name Metadata_ textbox each time that you decide to clean the File Name part, or refresh the **Home** page
+* The **DescriptionText** option has the same effect that _FileNameText_ but for the _Description Metadata_ textbox
+* The **SeparatorBetweenFields** is used by the _File Name Metadata_ textbox when we want to copy the result to the clipboard, so if you decide use the character `_` and in the _File Name Metadata_ textbox, for a WAV file name, you have the text `Hello World`, you will copy to the clipboard the text `Hello_World.WAV`
+
+Other indirect feature is that you can change this values in runtime. To refresh the values, you will have to refresh the _Home_ page
+
+
 # Software Requirements
 * This tool is developed using .NET Core 6, so you will have to install **ASP.NET Core Runtime 6.0.x** for your OS. You can find the package <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0">here</a>
 * After this, you can run this tool with the command **dotnet UcsMetadataUtility.dll**, but you can do it easily with the batch files that I am sharing in the **Executing the tool** section in this document
