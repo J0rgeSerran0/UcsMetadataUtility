@@ -1,0 +1,63 @@
+﻿@page
+@model UcsMetadataUtility.Pages.AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+
+<div class="text-center">
+    <div class="form-group">
+        <h3 style="font-size:60px;text-align:center;text-shadow:0 1px 0 rgb(200,200,200),0 2px 0 rgb(190,190,190),0 3px 0 rgb(180,180,180),0 4px 0 rgb(175,175,175),0 5px 0 rgb(180,180,180),0 6px 0 rgb(190,190,190),5px 7px 5px rgba(0, 0, 0, .40),5px 12px 10px rgba(0, 0, 0, .30),5px 17px 20px rgba(0, 0, 0, .20),5px 22px 30px rgba(0, 0, 0, .10);color: white;">
+            <strong>UCS Utility</strong>
+        </h3>
+        <p style="font-size:14px;text-align:center;text-shadow:0 1px 0 rgb(200,200,200),0 2px 0 rgb(190,190,190),0 3px 0 rgb(180,180,180),0 4px 0 rgb(175,175,175),0 5px 0 rgb(180,180,180),0 6px 0 rgb(190,190,190),5px 7px 5px rgba(0, 0, 0, .40),5px 12px 10px rgba(0, 0, 0, .30),5px 17px 20px rgba(0, 0, 0, .20),5px 22px 30px rgba(0, 0, 0, .10);color: #5c2639;">About</p>
+
+        <div class="container">
+            <div>
+                <a style="padding: 8px 12px;border-radius: 15px 30px 45px;border: 1px solid #cbcbcb;text-align: center;display: inline-block;text-decoration: none;color: #3a3a32;background-color: #f7f7d1;" href="https://www.paypal.com/paypalme/jorserp" target="_blank"><img src="~/images/PayPal.png" alt="Pay me a coffee if find this tool useful" />&nbsp;Pay me a coffee if find this tool useful</a>
+            </div>
+
+            <br />
+
+            <div class="panel panel-default">
+                <div class="panel-heading">What is UCS (Universal Category System)</div>
+                <div class="panel-body">
+                    <i>UCS</i> is a public domain initiative to provide the use of a set category list for the classification of sound effects<br />
+                    The main proposal is to give a consistent categorization of sound effects, offer uniformity in a filename structure, and ease the pain of maintaining a sound effects library<br />
+                    You can find more information about <a href="https://universalcategorysystem.com/" target="_blank">UCS here</a>!
+                </div>
+            </div>
+
+            <br />
+
+            <div class="panel panel-success">
+                <div class="panel-heading">What is this tool</div>
+                <div class="panel-body">
+                    This tool helps you to generate the metadata parts that you will use for categorization, organize and naming your sound effects
+                </div>
+            </div>
+
+            <br />
+
+            <div class="panel panel-info">
+                <div class="panel-heading">How it works</div>
+                <div class="panel-body">
+                    This tool load dinamically a CSV file named <em>UCSCategoryList.csv</em> with the UCS official content. You can edit the file deleting or adding content there if is fine for you
+                    <br />
+                    <br />
+                    In this tool you will find has three sections (<strong>Home</strong>, <strong>Search</strong> and <strong>About</strong>)
+                    <br />
+                    <br />
+                    <strong>Home</strong> is the heart of this tool, and you can use it to create your metadata information. You can copy the sections of UCS to paste them in the metadata parts, to delete, edit or add information quickly.
+                    Finally, you can set the extension file (<em>WAV</em>, <em>MP3</em> or <em>AIIF</em>), and copy to the clipboard the result to paste it as metadata
+                    <br />
+                    <br />
+                    <strong>Search</strong>, lets you localize a term, its categorization and the details that contains
+                    <br />
+                    <br />
+                    <strong>About</strong>, is this section that you are reading
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

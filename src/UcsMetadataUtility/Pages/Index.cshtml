@@ -1,0 +1,257 @@
+﻿@page
+
+@model UcsMetadataUtility.Pages.IndexModel
+@{
+    ViewData["Title"] = "UCS";
+}
+
+<script type="text/javascript">
+    function loadData() {
+
+        $.ajax({
+            type: "GET",
+            url: "/Filter?id=AllCategories",
+            success: function (response) {
+                document.getElementById('category').options.length = 0;
+                var options;
+
+                $.each(response, function (i, data) {
+                    options += '<option value="' + data.id + '">' + data.name + '</option>';
+                });
+
+                // Fill the data
+                $("#category").html(options);
+                // Force to search by categoryId
+                document.getElementById('category').onchange();
+
+                // Hide the loading image
+                document.getElementById('divLoading').hidden = true;
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    };
+
+
+    function categoriesChange(lst) {
+        var element = document.getElementById('category').options[document.getElementById('category').selectedIndex].value;
+
+        $.ajax({
+            type: "GET",
+            url: "/Filter?id=CategoryBy&byId=" + element,
+            success: function (response) {
+                document.getElementById('subcategory').options.length = 0;
+                var options;
+
+                $.each(response, function (i, data) {
+                    options += '<option value="' + data.id + '">' + data.name + '</option>';
+                });
+
+                // Fill the data
+                $("#subcategory").html(options);
+                // Force to search by subcategoryId
+                document.getElementById('subcategory').onchange();
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    };
+
+
+    function subcategoriesChange(lst) {
+        var element = document.getElementById('subcategory').options[document.getElementById('subcategory').selectedIndex].value;
+
+        $.ajax({
+            type: "GET",
+            url: "/Filter?id=SubcategoryBy&byId=" + element,
+            success: function (response) {
+                $.each(response, function (i, data) {
+                    // Fill the data
+                    document.getElementById("catid").setAttribute('value', data.catId);
+                    document.getElementById("catshort").setAttribute('value', data.catShort);
+                    document.getElementById("explanations").innerHTML = data.explanations;
+                    document.getElementById("synonyms").innerHTML = data.synonyms;
+                });
+
+                document.getElementById("fields").style.display = 'block';
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    };
+
+
+    function copyToClipboard(id, withExtension = false) {
+        //document.getElementById(id).select();
+        //document.execCommand('copy');
+        //window.getSelection().removeAllRanges();
+
+        var content = document.getElementById(id).value.trim();
+
+        if (content != "") {
+            if (withExtension) {
+                if (document.getElementById("optionwav").checked === true) {
+                    content = content + '.WAV';
+                }
+                else if (document.getElementById("optionmp3").checked === true) {
+                    content = content + '.MP3';
+                }
+                else if (document.getElementById("optionaiff").checked === true) {
+                    content = content + '.AIFF';
+                }
+            }
+            navigator.clipboard.writeText(content);
+        }
+    };
+
+
+    function clearMetadata() {
+        document.getElementById("filename").value = "";
+        document.getElementById("description").value = "";
+    }
+
+
+    window.onload = loadData;
+
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+</script>
+
+
+<div class="text-center">
+
+    <div class="form-group">
+        <h3 style="font-size:60px;text-align:center;text-shadow:0 1px 0 rgb(200,200,200),0 2px 0 rgb(190,190,190),0 3px 0 rgb(180,180,180),0 4px 0 rgb(175,175,175),0 5px 0 rgb(180,180,180),0 6px 0 rgb(190,190,190),5px 7px 5px rgba(0, 0, 0, .40),5px 12px 10px rgba(0, 0, 0, .30),5px 17px 20px rgba(0, 0, 0, .20),5px 22px 30px rgba(0, 0, 0, .10);color: white;">
+            <strong>UCS Utility</strong>
+        </h3>
+        <p style="font-size:14px;text-align:center;text-shadow:0 1px 0 rgb(200,200,200),0 2px 0 rgb(190,190,190),0 3px 0 rgb(180,180,180),0 4px 0 rgb(175,175,175),0 5px 0 rgb(180,180,180),0 6px 0 rgb(190,190,190),5px 7px 5px rgba(0, 0, 0, .40),5px 12px 10px rgba(0, 0, 0, .30),5px 17px 20px rgba(0, 0, 0, .20),5px 22px 30px rgba(0, 0, 0, .10);color: #5c2639;">Tool to prepare your metadata of your field recording and sound effects</p>
+
+        <div id="divLoading">
+            <img src="~/images/loading.gif" alt="Loading...." />
+        </div>
+
+        <br />
+
+        <div id="fields" style="text-align:center;display:none;">
+            <table style="display: inline-table;">
+                <tr>
+                    <td align="left">
+                        <table>
+                            <tr>
+                                <td><label style="color: #72566f;">Category&nbsp;</label></td>
+                                <td><select style="padding: 4px 8px;height:35px;border: 1px solid #2596be;margin: 4px;border-radius: 3px;max-width: 100%;" name="category" id="category" onchange="categoriesChange(this)"></select></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align="left" style="padding-left: 10px;">
+                        <table>
+                            <tr>
+                                <td><label style="color: #72566f;">Subcategory&nbsp;</label></td>
+                                <td><select style="padding: 4px 8px;height:35px;border: 1px solid #2596be;margin: 4px;border-radius: 3px;max-width: 100%;" name="subcategory" id="subcategory" onchange="subcategoriesChange(this)"></select></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                     <td align="left">
+                        <table>
+                            <tr>
+                                <td><label style="color: #72566f;">CatId&nbsp;</label></td>
+                                <td><button title="Copy" style="box-shadow: 0px 0px 1px 1px #676667;border-radius: 4px;background-color: #e5bce0;border: none;color: #72566f;padding: 2px 6px;cursor: pointer;" onclick="copyToClipboard('catid', false);" onmouseover="this.style.background='#f0d9f0';this.style.color='#ce9ec8'" onmouseout="this.style.background='#e5bce0';this.style.color='#676667'"><i class="fa fa-clipboard"></i></button><input type="text" style="padding: 4px 8px;height:35px;border: 1px solid #2596be;margin: 4px;border-radius: 3px;max-width: 100%;" name="catid" id="catid" readonly></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align="left" style="padding-left: 10px;">
+                        <table>
+                            <tr>
+                                <td><label style="color: #72566f;">CatShort&nbsp;</label></td>
+                                <td><button title="Copy" style="box-shadow: 0px 0px 1px 1px #676667;border-radius: 4px;background-color: #e5bce0;border: none;color: #72566f;padding: 2px 6px;cursor: pointer;" onclick="copyToClipboard('catshort', false);" onmouseover="this.style.background='#f0d9f0';this.style.color='#ce9ec8'" onmouseout="this.style.background='#e5bce0';this.style.color='#676667'"><i class="fa fa-clipboard"></i></button><input type="text" style="padding: 4px 8px;height:35px;border: 1px solid #2596be;margin: 4px;border-radius: 3px;max-width: 100%;" name="catshort" id="catshort" readonly></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <table style="display: inline-table;">
+                <tr>
+                     <td align="right">
+                        <table>
+                            <tr>
+                                <td><label style="color: #72566f;">Explanations&nbsp;</label></td>
+                                <td><button title="Copy" style="box-shadow: 0px 0px 1px 1px #676667;border-radius: 4px;background-color: #e5bce0;border: none;color: #72566f;padding: 2px 6px;cursor: pointer;" onclick="copyToClipboard('explanations', false);" onmouseover="this.style.background='#f0d9f0';this.style.color='#ce9ec8'" onmouseout="this.style.background='#e5bce0';this.style.color='#676667'"><i class="fa fa-clipboard"></i></button></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align="left"><textarea style="padding: 4px 8px;border: 1px solid #2596be;margin: 4px;border-radius: 3px;width: 700px;" name="explanations" id="explanations" readonly></textarea></td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <table>
+                            <tr>
+                                <td><label style="color: #72566f;">Synonyms&nbsp;</label></td>
+                                <td><button title="Copy" style="box-shadow: 0px 0px 1px 1px #676667;border-radius: 4px;background-color: #e5bce0;border: none;color: #72566f;padding: 2px 6px;cursor: pointer;" onclick="copyToClipboard('synonyms', false);" onmouseover="this.style.background='#f0d9f0';this.style.color='#ce9ec8'" onmouseout="this.style.background='#e5bce0';this.style.color='#676667'"><i class="fa fa-clipboard"></i></button></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align="left"><textarea style="padding: 4px 8px;border: 1px solid #2596be;margin: 4px;border-radius: 3px;width: 700px;" name="synonyms" id="synonyms" readonly></textarea></td>
+                </tr>
+                <tr>
+                    <td><hr style="height:2px;color:#a9486a;" /></td>
+                    <td><hr style="height:2px;color:#a9486a;" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                            <div style="padding: 4px 8px;"><span class="label label-info">Metadata Options</span>&nbsp;</div>
+                            <div class="btn-group mr-2" role="group">
+                                <button type="button" class="btn btn-secondary" aria-pressed="false" title="Clear Metadata" onclick="clearMetadata();"><i class="fa fa-file-o"></i></button>
+                            </div>
+                            <div class="btn-group">
+                                <input type="radio" class="btn-check" name="optionmedia" id="optionwav" autocomplete="off" checked />
+                                <label class="btn btn-secondary" for="optionwav" title="Add the .WAV extension for the Filename">WAV</label>
+                                <input type="radio" class="btn-check" name="optionmedia" id="optionmp3" autocomplete="off" />
+                                <label class="btn btn-secondary" for="optionmp3" title="Add the .MP3 extension for the Filename">MP3</label>
+                                <input type="radio" class="btn-check" name="optionmedia" id="optionaiff" autocomplete="off" />
+                                <label class="btn btn-secondary" for="optionaiff" title="Add the .AIFF extension for the Filename">AIFF</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <table>
+                            <tr>
+                                <td><label style="color: #72566f;">File Name&nbsp;</label></td>
+                                <td><button title="Copy" style="box-shadow: 0px 0px 1px 1px #676667;border-radius: 4px;background-color: #e5bce0;border: none;color: #72566f;padding: 2px 6px;cursor: pointer;" onclick="copyToClipboard('filename', true);" onmouseover="this.style.background='#f0d9f0';this.style.color='#ce9ec8'" onmouseout="this.style.background='#e5bce0';this.style.color='#676667'"><i class="fa fa-clipboard"></i></button></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align="left"><textarea style="padding: 4px 8px;border: 1px solid #0c6a9e;margin: 4px;border-radius: 3px;width: 700px;" name="filename" id="filename"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <table>
+                            <tr>
+                                <td><label style="color: #72566f;">Description&nbsp;</label></td>
+                                <td><button title="Copy" style="box-shadow: 0px 0px 1px 1px #676667;border-radius: 4px;background-color: #e5bce0;border: none;color: #72566f;padding: 2px 6px;cursor: pointer;" onclick="copyToClipboard('description', false);" onmouseover="this.style.background='#f0d9f0';this.style.color='#ce9ec8'" onmouseout="this.style.background='#e5bce0';this.style.color='#676667'"><i class="fa fa-clipboard"></i></button></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align="left"><textarea style="padding: 4px 8px;border: 1px solid #0c6a9e;margin: 4px;border-radius: 3px;width: 700px;" name="description" id="description"></textarea></td>
+                </tr>
+                <tr>
+                    <td><hr style="height:2px;color:#f9286a;" /></td>
+                    <td><hr style="height:2px;color:#f9286a;" /></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</div>

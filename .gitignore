@@ -3,3 +3,7 @@
 ################################################################################
 
 /src/.vs/UcsMetadataUtility
+/.vs
+/src/UcsMetadataUtility/.vs/UcsMetadataUtility
+/src/UcsMetadataUtility/bin/Debug/net6.0
+/src/UcsMetadataUtility/obj
