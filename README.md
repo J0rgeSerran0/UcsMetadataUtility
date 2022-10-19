@@ -50,8 +50,8 @@ dotnet UcsMetadataUtility.dll
 ```yaml
 #!/bin/bash
 cd /UcsMetadataUtility/
-open "http://localhost:5000/" 
-dotnet UcsMetadataUtility.dll 
+open "http://localhost:5004/" 
+dotnet UcsMetadataUtility.dll --urls=http://localhost:5004
 ```
 
 > Note: change the path, or the port, as is explained in this document
