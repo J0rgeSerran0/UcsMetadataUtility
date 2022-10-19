@@ -63,5 +63,7 @@ dotnet UcsMetadataUtility.dll --urls=http://localhost:5004
 # Screens
 
 ## Home Screen
-![Home Scren](images/Screen_01.png)
+![Home Screen](images/Screen_01.png)
 
+## Search Screen
+![Search Screen](images/Screen_02.png)
