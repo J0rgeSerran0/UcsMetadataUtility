@@ -15,5 +15,4 @@ You can find more information about *UCS* clicking in the next image link
 * <a href="https://www.youtube.com/watch?v=5WRlLx-yDOI">YouTube - How to write metadata for field recording & sound effects - Universal Category System (UCS)</a>
 * <a href="https://www.youtube.com/watch?v=JOK3im2AGvE">YouTube - How I Edit Sound Effects, Write Metadata & Batch Export with Adobe Audition!</a>
 
-# Know how to install and use UCS Metadata Utility
-## [Wiki](https://github.com/J0rgeSerran0/UcsMetadataUtility/wiki)
+# [Know how to install and use UCS Metadata Utility](https://github.com/J0rgeSerran0/UcsMetadataUtility/wiki)
