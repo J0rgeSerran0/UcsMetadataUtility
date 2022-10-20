@@ -4,6 +4,11 @@
 
 > Is a multiplatform Web Tool to create medatada following the UCS - Universal Category System proposals
 
+![](https://img.shields.io/static/v1?label=&message=Windows&color=blue)
+![](https://img.shields.io/static/v1?label=&message=macOS&color=success)
+
+<a href="https://github.com/J0rgeSerran0/UcsMetadataUtility/releases/tag/v1.1.0" target="_blank">![Last stable version](https://img.shields.io/static/v1?label=Last&nbsp;stable&nbsp;version&message=v1.1.0&color=2bf)</a>
+
 **UCS** is a public domain initiative to provide the use of a set category list for the classification of sound effects
 
 You can find more information about *UCS* clicking in the next image link
