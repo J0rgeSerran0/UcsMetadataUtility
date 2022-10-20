@@ -13,6 +13,7 @@ You can find more information about *UCS* clicking in the next image link
 ### Videos
 * <a href="https://www.youtube.com/watch?v=0s3ioIbNXSM">YouTube - UCS Filename Structure</a>
 * <a href="https://www.youtube.com/watch?v=5WRlLx-yDOI">YouTube - How to write metadata for field recording & sound effects - Universal Category System (UCS)</a>
+* <a href="https://www.youtube.com/watch?v=JOK3im2AGvE">YouTube - How I Edit Sound Effects, Write Metadata & Batch Export with Adobe Audition!</a>
 
 # Versions
 
