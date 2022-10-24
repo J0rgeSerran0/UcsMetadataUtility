@@ -2,7 +2,7 @@
 
 <a target="_blank" href="https://www.paypal.com/paypalme/jorserp"><img src="images/PayPal.png" />&nbsp;Pay me a coffee if find this tool useful</a>
 
-> Is a multiplatform Web Tool to create medatada following the UCS - Universal Category System proposals
+> Is a multiplatform Web Tool to create metadada following the UCS - Universal Category System proposals
 
 ![](https://img.shields.io/static/v1?label=&message=Windows&color=blue)
 ![](https://img.shields.io/static/v1?label=&message=macOS&color=success)
