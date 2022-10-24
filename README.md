@@ -1,6 +1,6 @@
 # What is UCS Metadata Utility?
 
-<a target="_blank" href="https://www.paypal.com/paypalme/jorserp"><img src="images/PayPal.png" />&nbsp;Pay me a coffee if find this tool useful</a>
+<a target="_blank" href="https://www.paypal.com/paypalme/jorserp"><img src="images/PayPal.png" />&nbsp;Pay me a coffee to spend my time improving this if find this tool useful</a>
 
 > Is a multiplatform Web Tool to create metadata following the UCS - Universal Category System proposals
 
