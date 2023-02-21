@@ -7,7 +7,7 @@
 ![](https://img.shields.io/static/v1?label=&message=Windows&color=blue)
 ![](https://img.shields.io/static/v1?label=&message=macOS&color=success)
 
-<a href="https://drive.google.com/drive/folders/1dkTIZ-ZZAY9buNcQIN79PmuLy1fPNqUo" target="_blank">![UCS v8.2](https://img.shields.io/static/v1?label=UCS&nbsp;Version&nbsp;Supported&message=UCS&nbsp;v8.1&color=fcc632)</a>
+<a href="https://drive.google.com/drive/folders/1dkTIZ-ZZAY9buNcQIN79PmuLy1fPNqUo" target="_blank">![UCS v8.2](https://img.shields.io/static/v1?label=UCS&nbsp;Version&nbsp;Supported&message=UCS&nbsp;v8.2&color=fcc632)</a>
 <a href="https://github.com/J0rgeSerran0/UcsMetadataUtility/releases/tag/v2.0.0" target="_blank">![Last stable version](https://img.shields.io/static/v1?label=Last&nbsp;stable&nbsp;version&message=v2.0.0&color=2bf)</a>
 
 
